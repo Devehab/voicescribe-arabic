@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>تحويل الكلام إلى نص</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2F6FDD;
+            --secondary-color: #e5eeff;
+        }
+
+        * {
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            width: 400px;
+            padding: 20px;
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(47, 111, 221, 0.1);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #2558b3;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+        }
+
+        #microphone-icon {
+            width: 64px;
+            height: 64px;
+            margin: 10px auto;
+            display: block;
+            filter: invert(37%) sepia(74%) saturate(1090%) hue-rotate(199deg) brightness(91%) contrast(101%);
+        }
+        .mic-icon {
+            color: #2F6FDD;
+            font-size: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .mic-icon:hover {
+            transform: scale(1.1);
+        }
+        .recording #microphone-icon {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--secondary-color);
+            min-height: 100px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="container mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-6">
+            <div class="flex items-center justify-center mb-3">
+                <i class="fas fa-microphone mic-icon text-4xl"></i>
+                <h1 class="text-2xl font-bold text-gray-800 mr-3">تحويل الكلام إلى نص</h1>
+            </div>
+            <p class="text-sm text-gray-600">تحدث بالعربية وسيتم تحويل كلامك إلى نص بسرعة وسهولة</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="glass-morphism p-6 rounded-xl shadow-lg">
+            <textarea 
+                id="outputText" 
+                class="w-full h-48 p-4 mb-4 text-gray-700 border border-gray-300 rounded-lg focus:outline-none transition-all duration-300"
+                placeholder="اضغط على زر المايكروفون وابدأ بالتحدث..."
+                dir="rtl"
+            ></textarea>
+
+            <!-- Controls -->
+            <div class="grid grid-cols-3 gap-3">
+                <button 
+                    id="startButton" 
+                    class="btn-primary flex items-center justify-center gap-2 text-white py-2 px-4 rounded-lg transition-all duration-300 focus:outline-none"
+                >
+                    <i class="fas fa-microphone"></i>
+                    <span>بدء التسجيل</span>
+                </button>
+                
+                <button 
+                    id="copyButton"
+                    class="btn-secondary flex items-center justify-center gap-2 text-white py-2 px-4 rounded-lg transition-all duration-300 focus:outline-none copyPulse"
+                >
+                    <i class="fas fa-copy"></i>
+                    <span>نسخ النص</span>
+                </button>
+
+                <button 
+                    id="clearButton"
+                    class="btn-danger flex items-center justify-center gap-2 text-white py-2 px-4 rounded-lg transition-all duration-300 focus:outline-none"
+                >
+                    <i class="fas fa-trash-alt"></i>
+                    <span>مسح النص</span>
+                </button>
+            </div>
+
+            <!-- Status Message -->
+            <div 
+                id="status" 
+                class="mt-4 text-sm text-center min-h-[20px] text-gray-600 opacity-75"
+            ></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-6 text-center text-xs text-gray-500">
+            <p>تحويل الكلام إلى نص مباشرة من المتصفح</p>
+            <p class="mt-1">سهل الاستخدام، دقيق، وسريع</p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>مرحبًا بك في تحويل الكلام إلى نص</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+    <div class="glass-card w-full max-w-2xl p-8 space-y-6">
+        <div class="text-center">
+            <div class="flex justify-center mb-6">
+                <i class="fas fa-microphone-alt text-6xl text-blue-600"></i>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">مرحبًا بك في تحويل الكلام إلى نص</h1>
+            <p class="text-gray-600 mb-6">دليل سريع للبدء واستخدام الإضافة</p>
+        </div>
+
+        <div class="space-y-4">
+            <div class="bg-blue-50 border-r-4 border-blue-500 p-4 flex items-center">
+                <i class="fas fa-info-circle text-blue-500 ml-3 text-2xl"></i>
+                <p class="text-blue-700">
+                    هذه الإضافة تساعدك على تحويل الكلام العربي إلى نص مكتوب بسهولة وسرعة
+                </p>
+            </div>
+
+            <div class="bg-green-50 border-r-4 border-green-500 p-4 flex items-center">
+                <i class="fas fa-check-circle text-green-500 ml-3 text-2xl"></i>
+                <p class="text-green-700">
+                    الإضافة تحتاج إلى إذن استخدام الميكروفون. يرجى السماح عند الطلب
+                </p>
+            </div>
+
+            <div class="bg-yellow-50 border-r-4 border-yellow-500 p-4 flex items-center">
+                <i class="fas fa-exclamation-triangle text-yellow-500 ml-3 text-2xl"></i>
+                <p class="text-yellow-700">
+                    تأكد من استخدام متصفح Chrome أو متصفح متوافق مع Web Speech API
+                </p>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">كيفية الاستخدام</h2>
+            <ol class="space-y-3 text-gray-700 max-w-md mx-auto">
+                <li class="flex items-center">
+                    <span class="ml-3 text-blue-600 font-bold">1.</span>
+                    انقر على أيقونة الإضافة في شريط Chrome
+                </li>
+                <li class="flex items-center">
+                    <span class="ml-3 text-blue-600 font-bold">2.</span>
+                    اسمح باستخدام الميكروفون عند الطلب
+                </li>
+                <li class="flex items-center">
+                    <span class="ml-3 text-blue-600 font-bold">3.</span>
+                    اضغط على زر التسجيل وتحدث بالعربية
+                </li>
+                <li class="flex items-center">
+                    <span class="ml-3 text-blue-600 font-bold">4.</span>
+                    سيتم تحويل كلامك إلى نص مباشرة
+                </li>
+            </ol>
+        </div>
+    </div>
+
+</body>
+</html>
