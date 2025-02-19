@@ -3,7 +3,7 @@
 ## Overview
 A modern, user-friendly Chrome extension that converts Arabic speech to text directly in your browser with a sleek, intuitive interface.
 
-![Extension Demo](demo.gif)
+<img src="demo.gif" height="400" alt="Extension Demo">
 
 ## 🌟 Features
 - 🔊 Real-time Arabic speech recognition
@@ -52,6 +52,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-Made with ❤️ for Arabic speakers by [@ehabkaram](https://github.com/yourusername)
+Made with ❤️ for Arabic speakers by [@Devehab](https://github.com/Devehab)
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/arabic-speech-to-text.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/yourusername/arabic-speech-to-text/stargazers/)
+[![GitHub stars](https://img.shields.io/github/stars/Devehab/voicescribe-arabic.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/Devehab/voicescribe-arabic/stargazers/)
